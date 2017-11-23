@@ -12,8 +12,8 @@ insert into sym_node_group (node_group_id) values ('postgres');
 insert into sym_node_group_link (source_node_group_id, target_node_group_id, data_event_action) values ('heroku', 'postgres', 'P');
 
 insert into sym_trigger 
-(trigger_id,source_table_name,channel_id,last_update_time,create_time)
-values('book','book','book',current_timestamp,current_timestamp);
+(trigger_id,source_table_name,channel_id, sync_on_delete, last_update_time,create_time)
+values('book','book','book', 0, current_timestamp,current_timestamp);
 
 insert into sym_router 
 (router_id,source_node_group_id,target_node_group_id,router_type,create_time,last_update_time)
